@@ -2,7 +2,7 @@
 
 var blocker = require('weex-transformer/lib/blocker');
 var styler = require('weex-styler');
-var templater = require('./templater');
+var templater = require('vue/dist/weex.compiler');
 
 
 function parseScripts(ret) {
