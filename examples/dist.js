@@ -44,20 +44,12 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var options = __webpack_require__(1)
-	new Vue(options)
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
 	
 	;
 	  module.exports = {
 	    el: 'scroller',
 	    components: {
-	      item: __webpack_require__(2)
+	      item: __webpack_require__(1)
 	    }
 	  }
 
@@ -65,8 +57,10 @@
 	module.exports.render = function() {with(this){return _h(_e('div'),[_h(_e('item',{staticAttrs:{"welcome":"Hello"}}))])}}
 
 
+	new Vue(module.exports)
+
 /***/ },
-/* 2 */
+/* 1 */
 /***/ function(module, exports) {
 
 	

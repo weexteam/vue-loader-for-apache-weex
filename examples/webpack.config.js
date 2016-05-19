@@ -1,15 +1,14 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './main.js',
+  entry: './foo.vue?root&entry=1',
   output: {
-    path: './dist',
-    filename: 'main.js'
+    filename: 'dist.js'
   },
   module: {
     loaders: [
       {
-        test: /\.vue$/,
+        test: /\.vue(\?[^?]+)?$/,
         loader: '../index.js'
       }
     ]

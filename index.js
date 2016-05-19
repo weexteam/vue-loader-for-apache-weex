@@ -1,5 +1,6 @@
 'use strict';
 
+var loaderUtils = require('loader-utils')
 var blocker = require('weex-transformer/lib/blocker');
 var styler = require('weex-styler');
 var templater = require('vue/dist/weex.compiler');
@@ -58,7 +59,7 @@ function parseStyles(ret) {
 module.exports = function(source) {
     var self = this;
     this.cacheable && this.cacheable();
-
+    var params = loaderUtils.parseQuery(this.resourceQuery);
     var callback = this.async();
     blocker.format(source, function(err, ret) {
         if (!err) {
@@ -69,6 +70,9 @@ module.exports = function(source) {
             ]).then(function(content) {
                 content = content.join('\n');
                 // console.log(source, '\n====================\n',  content)
+                if (params.entry) {
+                    content = content + '\n\nnew Vue(module.exports)'
+                }
                 callback(null, content);
             })
         } else {
