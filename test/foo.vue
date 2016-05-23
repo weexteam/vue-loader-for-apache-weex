@@ -6,7 +6,6 @@
 
 <script>
   module.exports = {
-    el: 'scroller',
     components: {
       item: require('./bar.vue')
     }

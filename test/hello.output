@@ -17,3 +17,4 @@ module.exports.style = {
   }
 }
 module.exports.render = function() {with(this){return _h(_e('text',{staticClass:["h1"],attrs:{"value":'Hello ' + who},staticAttrs:{"value":}}))}}
+module.exports.el = null

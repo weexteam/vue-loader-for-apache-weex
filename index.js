@@ -60,6 +60,7 @@ module.exports = function(source) {
     var style = parseStyles(blocks)
     var content = [
         script, style, template,
+        'module.exports.el = ' + (params.entry ? '"body"' : 'null'),
         params.entry ? 'new Vue(module.exports)' : ''
     ].filter(function (a) {
         return !!a

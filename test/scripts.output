@@ -8,3 +8,4 @@
     item: require('./bar.vue')
   }
 
+module.exports.el = null
