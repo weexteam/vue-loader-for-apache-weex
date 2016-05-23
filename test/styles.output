@@ -1,0 +1,12 @@
+module.exports.style = {
+  "foo": {
+    "fontSize": 12,
+    "color": "rgba(127,127,127,0.5)",
+    "alignItems": "center"
+  },
+  "bar": {
+    "width": 200,
+    "height": 200,
+    "a": 1
+  }
+}

@@ -1,0 +1,10 @@
+
+  module.exports = {
+    el: 'scroller',
+    components: {
+      item: require('./bar.vue')
+    }
+  }
+
+module.exports.render = function() {with(this){return _h(_e('div'),[_h(_e('item',{staticAttrs:{"welcome":"Hello"}}))])}}
+new Vue(module.exports)

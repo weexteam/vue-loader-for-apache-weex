@@ -1,0 +1,19 @@
+
+  module.exports = {
+    el: 'div',
+    data: {
+        who: 'vue'
+    }
+  }
+
+module.exports.style = {
+  "h1": {
+    "fontSize": 40,
+    "paddingTop": 20,
+    "paddingBottom": 20,
+    "textAlign": "center",
+    "backgroundColor": "#666666",
+    "color": "#FFFFFF"
+  }
+}
+module.exports.render = function() {with(this){return _h(_e('text',{staticClass:["h1"],attrs:{"value":'Hello ' + who},staticAttrs:{"value":}}))}}

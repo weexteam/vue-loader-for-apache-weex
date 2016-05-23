@@ -1,3 +1,5 @@
+// { framework: "Vue" }
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -45,7 +47,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	;
 	  module.exports = {
 	    el: 'scroller',
 	    components: {
@@ -53,18 +54,15 @@
 	    }
 	  }
 
-
 	module.exports.render = function() {with(this){return _h(_e('div'),[_h(_e('item',{staticAttrs:{"welcome":"Hello"}}))])}}
-
-
 	new Vue(module.exports)
+
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
 	
-	;
 	  module.exports = {
 	    props: ['welcome'],
 	    data: function () {
@@ -75,10 +73,6 @@
 	    }
 	  }
 
-
-	module.exports.render = function() {with(this){return _h(_e('div',{staticClass:["wrapper"]}),[_m(0),_h(_e('text',{staticClass:["demo-size"],attrs:{"value":(_s(welcome))}})),(list)&&_l((list),function(v,$index,k){return (k % 2)?_h(_e('text',{staticClass:["demo-size"],attrs:{"value":(_s(k)+"-"+_s(v))}})):void 0})])}}
-	module.exports.staticRenderFns = [function(){with(this){return _h(_e('image',{staticStyle:{width:"180",height:"41"},staticAttrs:{"src":"http://alibaba.github.io/weex/img/weex_logo_blue@3x.png"}}))}}]
-
 	module.exports.style = {
 	  "wrapper": {
 	    "alignItems": "center",
@@ -88,6 +82,9 @@
 	    "fontSize": 64
 	  }
 	}
+	module.exports.render = function() {with(this){return _h(_e('div',{staticClass:["wrapper"]}),[_m(0),_h(_e('text',{staticClass:["demo-size"],attrs:{"value":(_s(welcome))}})),(list)&&_l((list),function(v,$index,k){return (k % 2)?_h(_e('text',{staticClass:["demo-size"],attrs:{"value":(_s(k)+"-"+_s(v))}})):void 0})])}}
+	module.exports.staticRenderFns = [function(){with(this){return _h(_e('image',{staticStyle:{width:"180",height:"41"},staticAttrs:{"src":"http://alibaba.github.io/weex/img/weex_logo_blue@3x.png"}}))}}]
+
 
 /***/ }
 /******/ ]);

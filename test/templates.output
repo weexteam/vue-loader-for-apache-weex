@@ -1,0 +1,2 @@
+module.exports.render = function() {with(this){return (expr)?_h(_e('foo',{attrs:{"b":a+2},staticAttrs:{"a":"1"}}),function(){return [_h(_e('child'),function(){return [_m(0)]})]}):void 0}}
+module.exports.staticRenderFns = [function(){with(this){return _h(_e('text',{staticAttrs:{"value":_t("Hello")}}))}}]

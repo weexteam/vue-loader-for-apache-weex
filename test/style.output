@@ -1,0 +1,6 @@
+module.exports.style = {
+  "foo": {
+    "fontSize": 12,
+    "color": "#FF0000"
+  }
+}

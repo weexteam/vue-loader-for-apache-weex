@@ -5,78 +5,65 @@ var blocker = require('weex-transformer/lib/blocker');
 var styler = require('weex-styler');
 var templater = require('vue/dist/weex.compiler');
 
-
 function parseScripts(ret) {
-    return new Promise(function(resolve, reject) {
-        var content = '';
-        if (ret.scripts) {
-            content = ret.scripts.reduce(function(pre, cur) {
-                return pre + '\n;' + cur.content;
-            }, '');
-        }
-        resolve(content);
-    });
+    var content = '';
+    if (ret.scripts) {
+        content = ret.scripts.reduce(function(pre, cur) {
+            return (pre ? (pre + '\n;') : '') + cur.content;
+        }, '');
+    }
+    return content;
 }
 
 function parseTemplate(ret) {
-    return new Promise(function(resolve, reject) {
-        var content = '';
-        if (ret.template) {
-            var tpl = templater.compile(ret.template.content);
+    var content = [];
+    if (ret.template) {
+        var tpl = templater.compile(ret.template.content);
 
-            if (tpl.render) {
-                content += '\nmodule.exports.render = function() {' + tpl.render + '}';
-            }
-            if (tpl.staticRenderFns && tpl.staticRenderFns.length) {
-                content += '\nmodule.exports.staticRenderFns = [function(){' + tpl.staticRenderFns.join('},\nfunction() {') + '}]';
-            }
+        if (tpl.render) {
+            content.push('module.exports.render = function() {' + tpl.render + '}');
         }
-        resolve(content);
-    });
+        if (tpl.staticRenderFns && tpl.staticRenderFns.length) {
+            content.push('module.exports.staticRenderFns = [function(){' + tpl.staticRenderFns.join('},\nfunction() {') + '}]');
+        }
+    }
+    return content.join('\n');
 }
 
 function parseStyles(ret) {
-    return new Promise(function(resolve, reject) {
-        var content = '';
-        if (ret.styles) {
-            var style = ret.styles.reduce(function(pre, cur) {
-                return pre + '\n' + cur.content;
-            }, '');
+    var content = [];
+    if (ret.styles) {
+        var style = ret.styles.reduce(function(pre, cur) {
+            return (pre ? (pre + '\n') : '') + cur.content;
+        }, '');
 
-            styler.parse(style, function(err, obj) {
-                if (!err) {
-                    content += '\nmodule.exports.style = ' + JSON.stringify(obj.jsonStyle, null, '  ');
-                    resolve(content);
-                }
-            });
-        } else {
-            resolve(content);
-        }
-    });
+        styler.parse(style, function(err, obj) {
+            if (!err) {
+                content.push('module.exports.style = '
+                    + JSON.stringify(obj.jsonStyle, null, 2));
+            }
+        });
+    }
+    return content.join('\n');
 }
-
 
 module.exports = function(source) {
     var self = this;
     this.cacheable && this.cacheable();
     var params = loaderUtils.parseQuery(this.resourceQuery);
-    var callback = this.async();
+    var blocks
     blocker.format(source, function(err, ret) {
-        if (!err) {
-            Promise.all([
-                parseScripts(ret),
-                parseTemplate(ret),
-                parseStyles(ret)
-            ]).then(function(content) {
-                content = content.join('\n');
-                // console.log(source, '\n====================\n',  content)
-                if (params.entry) {
-                    content = content + '\n\nnew Vue(module.exports)'
-                }
-                callback(null, content);
-            })
-        } else {
-            callback(err, source);
-        }
+        blocks = ret
     });
+    var script = parseScripts(blocks)
+    var template = parseTemplate(blocks)
+    var style = parseStyles(blocks)
+    var content = [
+        script, style, template,
+        params.entry ? 'new Vue(module.exports)' : ''
+    ].filter(function (a) {
+        return !!a
+    })
+    .join('\n')
+    return content + '\n'
 }
