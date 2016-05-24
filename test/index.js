@@ -18,6 +18,10 @@ describe('Loader', () => {
     test('scripts')
   })
 
+  it('should transform script with native module require', () => {
+    test('require')
+  })
+
   it('should transform style', () => {
     test('style')
     test('styles')

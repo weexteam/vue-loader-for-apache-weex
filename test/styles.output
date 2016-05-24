@@ -10,4 +10,4 @@ module.exports.style = {
     "a": 1
   }
 }
-module.exports.el = null
+delete module.exports.el

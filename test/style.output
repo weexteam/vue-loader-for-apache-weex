@@ -4,4 +4,4 @@ module.exports.style = {
     "color": "#FF0000"
   }
 }
-module.exports.el = null
+delete module.exports.el

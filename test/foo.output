@@ -6,4 +6,4 @@
   }
 
 module.exports.render = function() {with(this){return _h(_e('div'),[_h(_e('item',{staticAttrs:{"welcome":"Hello"}}))])}}
-module.exports.el = null
+delete module.exports.el

@@ -1,4 +1,6 @@
 
+  var event = __weex_require_module__('event')
+  event.openURL('http://localhost/')
   module.exports = {
     data: { x: 1, y: 2 },
     components: {

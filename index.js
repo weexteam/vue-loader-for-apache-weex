@@ -5,6 +5,8 @@ var blocker = require('weex-transformer/lib/blocker');
 var styler = require('weex-styler');
 var templater = require('vue/dist/weex.compiler');
 
+var REQUIRE_REG = /require\((["'])\@weex\-module\/([^\)\1]+)\1\)/g;
+
 function parseScripts(ret) {
     var content = '';
     if (ret.scripts) {
@@ -12,6 +14,7 @@ function parseScripts(ret) {
             return (pre ? (pre + '\n;') : '') + cur.content;
         }, '');
     }
+    content = content.replace(REQUIRE_REG, '__weex_require_module__($1$2$1)');
     return content;
 }
 
@@ -60,7 +63,7 @@ module.exports = function(source) {
     var style = parseStyles(blocks)
     var content = [
         script, style, template,
-        'module.exports.el = ' + (params.entry ? '"body"' : 'null'),
+        params.entry ? 'module.exports.el = "body"' : 'delete module.exports.el',
         params.entry ? 'new Vue(module.exports)' : ''
     ].filter(function (a) {
         return !!a
