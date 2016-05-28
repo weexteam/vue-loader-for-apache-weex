@@ -16,5 +16,5 @@ module.exports.style = {
     "color": "#FFFFFF"
   }
 }
-module.exports.render = function() {with(this){return _h(_e('text',{staticClass:["h1"],attrs:{"value":'Hello ' + who},staticAttrs:{"value":}}))}}
+module.exports.render = function() {with(this){return _h(_e('text',{staticClass:["h1"],attrs:{"value":'Hello ' + who}}))}}
 delete module.exports.el
