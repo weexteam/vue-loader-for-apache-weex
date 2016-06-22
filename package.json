@@ -1,5 +1,5 @@
 {
-  "name": "vue-weex-loader",
+  "name": "weex-vue-loader",
   "version": "0.1.0",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register"
