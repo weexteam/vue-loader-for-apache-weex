@@ -1,6 +1,26 @@
 {
   "name": "weex-vue-loader",
   "version": "0.1.0",
+  "description": "Webpack loader for Weex port of Vue 2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/weexteam/weex-vue-loader.git"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "weex",
+    "vue",
+    "webpack",
+    "loader"
+  ],
+  "author": "Jinjiang",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/weexteam/weex-vue-loader/issues"
+  },
+  "homepage": "https://github.com/weexteam/weex-vue-loader",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register"
   },
@@ -15,6 +35,7 @@
     "entities": "^1.1.1",
     "loader-utils": "^0.2.15",
     "weex-styler": "0.0.17",
-    "weex-transformer": "^0.3.1"
+    "weex-transformer": "^0.3.1",
+    "weex-vue-framework": "^0.1.0"
   }
 }
