@@ -5,5 +5,5 @@
     }
   }
 
-module.exports.render = function() {with(this){return _h(_e('div'),[_h(_e('item',{staticAttrs:{"welcome":"Hello"}}))])}}
+module.exports.render = function() {with(this){return _h('div',[_h('item',{attrs:{"welcome":"Hello"}})])}}
 delete module.exports.el

@@ -3,7 +3,7 @@
 var loaderUtils = require('loader-utils')
 var blocker = require('weex-transformer/lib/blocker');
 var styler = require('weex-styler');
-var templater = require('weex-vue-framework/dist/weex.compiler');
+var templater = require('weex-template-compiler');
 
 var REQUIRE_REG = /require\((["'])\@weex\-module\/([^\)\1]+)\1\)/g;
 
