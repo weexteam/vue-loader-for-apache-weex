@@ -18,6 +18,6 @@ module.exports.style = {
     "fontSize": 64
   }
 }
-module.exports.render = function() {with(this){return _h('div',{staticClass:["wrapper"]},[_m(0),_h('text',{staticClass:["demo-size"]},[_s(welcome)]),(list)&&_l((list),function(k,v){return (k % 2)?_h('text',{staticClass:["demo-size"]},[_s(k)+"-"+_s(v)]):_e()})])}}
+module.exports.render = function() {with(this){return _h('div',{staticClass:["wrapper"]},[_m(0),_h('text',{staticClass:["demo-size"]},[_s(welcome)]),_l((list),function(k,v){return (k % 2)?_h('text',{staticClass:["demo-size"]},[_s(k)+"-"+_s(v)]):_e()})])}}
 module.exports.staticRenderFns = [function(){with(this){return _h('image',{staticStyle:{width:"180",height:"41"},attrs:{"src":"http://alibaba.github.io/weex/img/weex_logo_blue@3x.png"}})}}]
 delete module.exports.el

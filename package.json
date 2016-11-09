@@ -35,7 +35,7 @@
     "entities": "^1.1.1",
     "loader-utils": "^0.2.15",
     "weex-styler": "0.0.17",
-    "weex-template-compiler": "^0.1.7",
+    "weex-template-compiler": "2.0.5-weex.1",
     "weex-transformer": "^0.3.1"
   }
 }
