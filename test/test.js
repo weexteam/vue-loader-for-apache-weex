@@ -1,3 +1,5 @@
+// @todo: weex test cases
+
 process.env.VUE_LOADER_TEST = true
 
 var path = require('path')
@@ -88,7 +90,7 @@ function interopDefault (module) {
     : module
 }
 
-describe('vue-loader', function () {
+describe.skip('vue-loader', function () {
   it('basic', function (done) {
     test({
       entry: './test/fixtures/basic.vue'
