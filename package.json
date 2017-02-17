@@ -44,7 +44,7 @@
     "vue-template-compiler": "^2.1.10",
     "vue-template-es2015-compiler": "^1.2.2",
     "weex-styler": "^0.1.5",
-    "weex-template-compiler": "^2.1.10-weex.1"
+    "weex-template-compiler": "^2.1.10-weex.2"
   },
   "peerDependencies": {
     "css-loader": "*",
