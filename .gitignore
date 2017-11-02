@@ -5,4 +5,3 @@ docs/_book
 .DS_Store
 .idea
 *.iml
-package-lock.json

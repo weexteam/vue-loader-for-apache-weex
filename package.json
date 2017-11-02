@@ -1,6 +1,6 @@
 {
   "name": "weex-vue-loader",
-  "version": "0.4.2",
+  "version": "0.5.0-beta.3",
   "description": "Vue.js component loader for Webpack",
   "main": "index.js",
   "repository": {
@@ -44,7 +44,7 @@
     "vue-template-compiler": "^2.4.2",
     "vue-template-es2015-compiler": "^1.2.2",
     "weex-styler": "^0.2.1",
-    "weex-template-compiler": "^2.4.2-weex.2"
+    "weex-template-compiler": "^2.4.2-beta.5"
   },
   "peerDependencies": {
     "css-loader": "*"
