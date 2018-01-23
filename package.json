@@ -1,6 +1,6 @@
 {
   "name": "weex-vue-loader",
-  "version": "0.5.12",
+  "version": "0.5.13",
   "description": "Vue.js component loader for Webpack",
   "main": "index.js",
   "repository": {
